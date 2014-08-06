@@ -9,4 +9,9 @@ function SongsController($scope){
     {title: 'bsong 2', artist: 'bartist2', duration: 200, released: false, price: 120},
     {title: 'csong 3', artist: 'cartist3', duration: 300, released: true, price: 130},
     {title: 'dsong 4', artist: 'dartist4', duration: 400, released: false, price: 140}];
+
+    $scope.doSort = function(propName){
+      $scope.sortBy = propName;
+      $scope.reverse = !$scope.reverse;
+    };
 }

@@ -10,11 +10,11 @@
         Filter: <input type="text" ng-model="songFilter.title"/>
             <table>
               <tr>
-                <th ng-click="sortBy='title';reverse=!reverse">Title:</th>
-                <th ng-click="sortBy='artist';reverse=!reverse">Artist:</th>
-                <th ng-click="sortBy='duration';reverse=!reverse">Duration</th>
-                <th ng-click="sortBy='released';reverse=!reverse">Released</th>
-                <th ng-click="sortBy='price';reverse=!reverse">Price</th>
+                <th ng-click="doSort('title')">Title:</th>
+                <th ng-click="doSort('artist')">Artist:</th>
+                <th ng-click="doSort('duration')">Duration</th>
+                <th ng-click="doSort('released')">Released</th>
+                <th ng-click="doSort('price')">Price</th>
               </tr>
               <tr ng-repeat="song in songs | filter: songFilter | orderBy: ['title', 'duration']">
                 <td> {{ song.title }} </td>
