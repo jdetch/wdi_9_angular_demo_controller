@@ -4,6 +4,9 @@
 // Polluting the Global Namespace
 // If we had a JS library that ALSO had a variable or function of this name,
 // 'say', it would cause a naming conflict
-function say(){
-  alert('Say Hello');
-}
+// function say(){
+//   alert('Say Hello');
+// }
+
+//IIFE
+(alert("hello"))()
