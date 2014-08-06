@@ -1,0 +1,33 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <script type="text/javascript" src='js/angular.js'></script>
+    <script src='app/controllers/songsController.js'></script>
+  </head>
+  <body>
+    <div ng-init="songs=[{title: 'zsong 1', artist: 'xartist1', duration: 100, released: true, price: 150},
+    {title: 'asong 5', artist: 'artist5', duration: 100, released: true, price: 150},
+    {title: 'bsong 2', artist: 'bartist2', duration: 200, released: false, price: 120},
+    {title: 'csong 3', artist: 'cartist3', duration: 300, released: true, price: 130},
+    {title: 'dsong 4', artist: 'dartist4', duration: 400, released: false, price: 140}]">
+      <h3>Song List</h3>
+        Filter: <input type="text" ng-model="songFilter.title"/>
+            <table>
+              <tr>
+                <th ng-click="sortBy='title';reverse=!reverse">Title:</th>
+                <th ng-click="sortBy='artist';reverse=!reverse">Artist:</th>
+                <th ng-click="sortBy='duration';reverse=!reverse">Duration</th>
+                <th ng-click="sortBy='released';reverse=!reverse">Released</th>
+                <th ng-click="sortBy='price';reverse=!reverse">Price</th>
+              </tr>
+              <tr ng-repeat="song in songs | filter: songFilter | orderBy: ['title', 'duration']">
+                <td> {{ song.title }} </td>
+                <td> {{ song.artist }} </td>
+                <td> {{ song.duration }} </td>
+                <td> {{ song.released }} </td>
+                <td> {{ song.price }} </td>
+              </tr>
+            </table>
+
+</body>
+</html>
